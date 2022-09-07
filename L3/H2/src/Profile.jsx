@@ -5,11 +5,11 @@ const Profile = (props) => {
   return (
     <div className="profile">
       <div className="profile__name">
-        {`${props.firstName} ${props.lastName}`}{" "}
+        {`${props.userData.firstName} ${props.userData.lastName}`}{" "}
       </div>
       <div className="profile__birth">
-        {`Was born ${moment(props.birthDay).format("MMM Do YY")} in ${
-          props.birthPlace
+        {`Was born ${moment(props.userData.birthDay).format("DD MMM YY")} in ${
+          props.userData.birthPlace
         }`}
       </div>
     </div>
