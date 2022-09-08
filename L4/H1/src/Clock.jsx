@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import moment from "moment";
 import "./clock.scss";
 
 const getTimeWithOffset = (offset) => {
