@@ -4,8 +4,8 @@ import Clock from "./Clock.jsx";
 const App = () => {
   return (
     <>
-      <Clock location="Kyiv" offset={-3} />
-      <Clock location="Japan" offset={7} />
+      <Clock location="New York" offset={-3} />
+      <Clock location="Kyiv" offset={7} />
       <Clock location="London" offset={10} />
     </>
   );
