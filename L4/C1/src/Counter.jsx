@@ -18,5 +18,4 @@ class Counter extends Component {
     return <div className="counter">{this.state.counter}</div>;
   }
 }
-
 export default Counter;
