@@ -8,19 +8,17 @@ class Toggler extends Component {
     };
   }
   changeStatus = () => {
-    if (this.state.status === "Off") {
-      this.setState({
-        status: "On",
-      });
-    } else {
-      this.setState({
-        status: "Off",
-      });
-    }
+    this.state.status === "Off"
+      ? this.setState({
+          status: "On",
+        })
+      : this.setState({
+          status: "Off",
+        });
   };
   render() {
     return (
-      <div class="toggler" onClick={this.changeStatus}>
+      <div class="toggler" onClick={() => this.changeStatus}>
         {this.state.status}
       </div>
     );
