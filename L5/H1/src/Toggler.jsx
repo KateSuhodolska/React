@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
 class Toggler extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       status: "Off",
     };
@@ -18,7 +18,7 @@ class Toggler extends Component {
   };
   render() {
     return (
-      <div class="toggler" onClick={() => this.changeStatus}>
+      <div class="toggler" onClick={() => this.changeStatus()}>
         {this.state.status}
       </div>
     );
