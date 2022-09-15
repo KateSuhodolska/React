@@ -22,10 +22,10 @@ class Auth extends Component {
       <div className="panel">
         <Greeting isLoggedIn={this.state.isLoggedIn} />
         <div>
-          {this.state.isLoggedIn ? (
-            <Logout onClick={this.handleLoggedin} />
-          ) : (
+          {!this.state.isLoggedIn ? (
             <Login onClick={this.handleLoggedin} />
+          ) : (
+            <Logout onClick={this.handleLoggedin} />
           )}
         </div>
       </div>
