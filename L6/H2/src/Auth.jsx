@@ -31,15 +31,13 @@ class Auth extends Component {
   };
 
   render() {
-    let button;
-    if (this.state.isLoggedIn === true) {
-      button = <Logout onLogout={this.onLogout} />;
-    } else if (this.state.isLoggedIn === "spinner") {
-      button = <Spinner size="50px" />;
-    } else if (this.state.isLoggedIn === false) {
-      button = <Login onLogin={this.onLogin} />;
-    }
-    return <div className="panel">{button}</div>;
+    return (
+      <div className="panel">
+        {this.state.isLoggedIn === true && <Logout onLogout={this.onLogout} />}
+        {this.state.isLoggedIn === "spinner" && <Spinner size="50px" />}
+        {this.state.isLoggedIn === false && <Login onLogin={this.onLogin} />}
+      </div>
+    );
   }
 }
 
