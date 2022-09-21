@@ -1,17 +1,18 @@
 import React, { Component } from "react";
 
 class Life extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     console.log("constructor: good place to create state");
   }
   componentDidMount() {
     console.log("componentDidMount: API calls, subscriptions");
   }
-  shouldComponentUpdate() {
+  shouldComponentUpdate(nextProps, nextState) {
     console.log(
       "shouldComponentUpdate(nextProps, nextState): decide to render or not to render"
     );
+    return nextProps.number % 2;
   }
   componentDidUpdate() {
     console.log(
@@ -25,7 +26,7 @@ class Life extends Component {
   }
   render() {
     console.log("return React element to build DOM");
-    return <div></div>;
+    return <div>{this.props.number}</div>;
   }
 }
 
