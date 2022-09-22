@@ -12,10 +12,14 @@ class ConnectionStatus extends Component {
     window.addEventListener("offline", () =>
       this.setState({ status: "offline" })
     );
-    // const { online, offline } = window;
-    // online
-    //   ? this.setState({ status: "online" })
-    //   : this.setState({ status: "offline" });
+  }
+  componentWillUnmount() {
+    window.removeEventListener("online", () =>
+      this.setState({ status: "online" })
+    );
+    window.removeEventListener("offline", () =>
+      this.setState({ status: "offline" })
+    );
   }
 
   render() {
