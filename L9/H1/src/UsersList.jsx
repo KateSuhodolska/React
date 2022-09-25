@@ -5,9 +5,10 @@ import Filter from "./Filter";
 class UsersList extends Component {
   state = {
     text: "",
+    usersList: this.props.users,
   };
 
-  changeText = (val) => {
+  onChange = (val) => {
     this.setState({
       text: val,
     });
@@ -25,7 +26,7 @@ class UsersList extends Component {
     return (
       <div>
         <Filter
-          onChange={this.changeText}
+          onChange={this.onChange}
           filterText={this.state.text}
           count={filteredUsers.length}
         />
