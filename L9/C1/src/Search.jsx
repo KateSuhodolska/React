@@ -7,7 +7,7 @@ class Search extends Component {
 
   search = (event) => {
     event.preventDefault();
-    alert(this.state.text);
+    alert(`Search text: ${this.state.text}`);
   };
 
   handleSubmit = (event) => {
