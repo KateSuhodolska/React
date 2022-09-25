@@ -5,7 +5,7 @@ class Dimensions extends Component {
     super(props);
 
     this.state = {
-      userData: null,
+      userData: "",
     };
   }
 
