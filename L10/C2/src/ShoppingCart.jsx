@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import CartTitle from "./CartTitle";
+import ProductsList from "./ProductsList";
 
 class ShoppingCart extends Component {
   state = {
@@ -23,6 +24,7 @@ class ShoppingCart extends Component {
           userData={this.props.userData}
           products={this.state.cartItems}
         />
+        <ProductsList products={this.state.cartItems} />
       </div>
     );
   }

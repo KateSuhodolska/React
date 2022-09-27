@@ -3,12 +3,15 @@ import Profile from "./Profile";
 import ShoppingCart from "./ShoppingCart";
 
 class App extends Component {
-  state = {
-    userData: {
-      firstName: "Tom",
-      secondName: "Jery",
-    },
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      userData: {
+        firstName: "Tom",
+        secondName: "Jery",
+      },
+    };
+  }
 
   handleChangeUserData = (event) => {
     const { name, value } = event.target;
