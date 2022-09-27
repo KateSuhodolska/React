@@ -1,6 +1,6 @@
 import React from "react";
-import TemperatureInput from "./TemperatureInput";
-import BoilingVerdict from "./BoilingVerdict";
+import TemperatureInput from "./TemperatureInput.jsx";
+import BoilingVerdict from "./BoilingVerdict.jsx";
 
 function toCelsius(fahrenheit) {
   return ((fahrenheit - 32) * 5) / 9;
