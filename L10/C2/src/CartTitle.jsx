@@ -1,11 +1,9 @@
 import React from "react";
 
-const cartTitle = ({ userData, products }) => {
+const CartTitle = ({ count, userName }) => {
   return (
-    <>
-      <div className="cart-title">{`${userData.firstName}, you added ${products.length} items`}</div>
-    </>
+    <div className="cart-title">{`${userName}, you added ${count} items`}</div>
   );
 };
 
-export default cartTitle;
+export default CartTitle;

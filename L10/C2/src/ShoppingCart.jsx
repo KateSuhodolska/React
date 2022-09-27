@@ -1,33 +1,35 @@
 import React, { Component } from "react";
-import CartTitle from "./CartTitle";
-import ProductsList from "./ProductsList";
+import CartTitle from "./CartTitle.jsx";
+import ProductsList from "./ProductsList.jsx";
 
 class ShoppingCart extends Component {
   state = {
-    cartItems: [
+    productsList: [
       {
-        id: "1",
+        id: "id-01",
         name: "iPhone 11",
         price: 999,
       },
       {
-        id: "2",
+        id: "id-02",
         name: "iPad Pro",
         price: 799,
       },
     ],
   };
+
   render() {
     return (
       <div className="column">
         <CartTitle
-          userData={this.props.userData}
-          products={this.state.cartItems}
+          count={this.state.productsList.length}
+          userName={this.props.userName}
         />
-        <ProductsList products={this.state.cartItems} />
+        <ProductsList cartItems={this.state.productsList} />
       </div>
     );
   }
 }
 
 export default ShoppingCart;
+

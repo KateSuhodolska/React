@@ -1,20 +1,22 @@
 import React, { Component } from "react";
-import Profile from "./Profile";
-import ShoppingCart from "./ShoppingCart";
+import ShoppingCart from "./ShoppingCart.jsx";
+import Profile from "./Profile.jsx";
 
 class App extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       userData: {
-        firstName: "Tom",
-        secondName: "Jery",
+        firstName: "John",
+        lastName: "Doe",
       },
     };
   }
 
-  handleChangeUserData = (event) => {
+  handleChange = (event) => {
     const { name, value } = event.target;
+
     this.setState({
       userData: {
         ...this.state.userData,
@@ -24,13 +26,15 @@ class App extends Component {
   };
 
   render() {
-    const { userData } = this.state;
+    const data = this.state.userData;
     return (
       <div className="page">
-        <h1 className="title">{`Hello, ${userData.firstName} ${userData.secondName}`}</h1>
+        <h1 className="title">
+          Hello, {data.firstName} {data.lastName}
+        </h1>
         <main className="content">
-          <ShoppingCart userData={userData} />
-          <Profile userData={userData} onChange={this.handleChangeUserData} />
+          <ShoppingCart userName={data.firstName} />
+          <Profile userData={data} handleChange={this.handleChange} />
         </main>
       </div>
     );

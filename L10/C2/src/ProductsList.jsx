@@ -1,20 +1,20 @@
 import React from "react";
 
-const ProductsList = ({ products }) => {
-  const total = products.reduce((acc, item) => acc + item.price, 0);
+const ProductsList = ({ cartItems }) => {
   return (
     <div className="products">
       <ul className="products__list">
-        {products.map(({ id, name, price }) => {
-          return (
-            <li key={id} className="products__list-item">
-              <span className="products__item-name">{name}</span>
-              <span className="products__item-price">{`$${price}`}</span>
-            </li>
-          );
-        })}
+        {cartItems.map(({ id, name, price }) => (
+          <li key={id} className="products__list-item">
+            <span className="products__item-name">{name}</span>
+            <span className="products__item-price">{`$${price}`}</span>
+          </li>
+        ))}
       </ul>
-      <div className="products__total">{`Total: $${total}`}</div>
+      <div className="products__total">{`Total: $${cartItems.reduce(
+        (acc, cart) => acc + cart.price,
+        0
+      )}`}</div>
     </div>
   );
 };
