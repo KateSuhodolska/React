@@ -25,7 +25,16 @@ class App extends Component {
           Show dialog
         </button>
         {this.state.isOpen === true && (
-          <Dialog title="Some title" onClose={this.hideDialog} />
+          <Dialog
+            title="Recommendation"
+            isOpen={this.state.isOpen}
+            onClose={this.hideDialog}
+          >
+            <p>
+              Use immutable array methods to work with data. It will help to
+              avoid bugs
+            </p>
+          </Dialog>
         )}
       </div>
     );
