@@ -1,5 +1,4 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Expand = ({ title, children, onClick, isOpen }) => {
   return (
