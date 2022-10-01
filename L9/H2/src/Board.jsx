@@ -2,6 +2,7 @@ import React from "react";
 import Square from "./Square.jsx";
 
 class Board extends React.Component {
+  rconst;
   renderSquare(i) {
     return (
       <Square
@@ -35,4 +36,3 @@ class Board extends React.Component {
 }
 
 export default Board;
-
