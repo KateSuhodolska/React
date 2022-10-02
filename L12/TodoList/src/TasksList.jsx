@@ -22,7 +22,7 @@ class TasksList extends Component {
   }
 
   createTask = (text) => {
-    createNewTask({ text, done: false }).then(() => this.getTasksList);
+    createNewTask({ text, done: false }).then(() => this.getTasksList());
   };
 
   deleteTask = (id) => {
