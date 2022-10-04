@@ -1,22 +1,37 @@
 import React, { useState } from "react";
+import {
+  BrowserRouter as BrowserRouter,
+  Switch,
+  Route,
+  Link,
+} from "react-router-dom";
 import User from "./User";
 
 const App = () => {
   return (
     <div className="page">
-      <div className="page__content">
-        <h1>Users</h1>
-        <ul className="navigation">
-          <li className="navigation__item">
-            <a href="/users/github">Github</a>
-          </li>
-          <li className="navigation__item">
-            <a href="/users/facebook">Facebook</a>
-          </li>
-        </ul>
+      <BrowserRouter>
+        <div className="page__content">
+          <h1>Users</h1>
+          <ul className="navigation">
+            <li className="navigation__item">
+              <Link to="/users/github">Github</Link>
+            </li>
+            <li className="navigation__item">
+              <Link to="/users/facebook">Facebook</Link>
+            </li>
+          </ul>
+          <Switch>
+            <Route exact path="/">
+              <span>Select a user please</span>
+            </Route>
 
-        <User />
-      </div>
+            <Route path="/users/:userId">
+              <User />
+            </Route>
+          </Switch>
+        </div>
+      </BrowserRouter>
     </div>
   );
 };
